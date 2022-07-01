@@ -63,7 +63,7 @@ int main(){
 	cout<<"Masukkan NIM Anda : "<<endl;
 	cin>>nim;
 	cout<<"Masukkan Nama Anda : "<<endl;
-	cin>>nama;
+	getline(cin, nama);
 	cout<<"Silahkan Masukkan Fakultas Anda"<<endl;
 	cout<<"Ketik 1 untuk Fakultas Ilmu Komputer"<<endl;
 	cout<<"Ketik 2 untuk Fakultas Ekonomi dan Sosial"<<endl;
