@@ -77,7 +77,7 @@ int main(){
 	cout<<"\nAdministrasi Mahasiswa Amikom"<<endl; 
 	cout<<user_fakul<<endl;
 	cout<<"Nama Mahasiswa : "<<nama<<endl;
-	cout << "NIM : " << nim;
+	cout << "NIM : " << nim << endl;
 	cout<<Perhitungan(spp_tetap, spp_vbl, sks);
 	return 0;
 }
