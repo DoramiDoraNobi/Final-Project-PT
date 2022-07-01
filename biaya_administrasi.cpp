@@ -60,10 +60,10 @@ int main(){
 	
 	
 	// Code Input Nama dan Nim 
-	cout<<"Masukkan NIM Anda : "<<endl;
+	cout<<"Masukkan NIM Anda : ";
 	cin>>nim;
-	cout<<"Masukkan Nama Anda : "<<endl;
-	getline(cin, nama);
+	cout<<"Masukkan Nama Anda : ";
+	getline(cin >> ws, nama);
 	cout<<"Silahkan Masukkan Fakultas Anda"<<endl;
 	cout<<"Ketik 1 untuk Fakultas Ilmu Komputer"<<endl;
 	cout<<"Ketik 2 untuk Fakultas Ekonomi dan Sosial"<<endl;
@@ -77,6 +77,5 @@ int main(){
 	cout<<user_fakul<<endl;
 	cout<<"Nama Mahasiswa : "<<nama<<endl;
 	cout<<Perhitungan(spp_tetap, spp_vbl, sks);
-	
-	
+	return 0;
 }
