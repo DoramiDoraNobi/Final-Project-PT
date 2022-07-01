@@ -4,20 +4,20 @@ using namespace std;
 
 string nama, nim, user_fakul, fakul[3];
 int fakultas, prodi, spp_tetap, sks, spp_vbl, totbay;
-bool kelas;
 
-int Percabangan(int fakul_kuliah){
+void Percabangan(int fakul_kuliah){
 	//Code If ELse
+	char kelas;
 	if(fakul_kuliah == 1){
 		user_fakul = fakul[0];
 		cout<<"Kamu adalah Anggota dari "<<user_fakul<<endl;
-		cout<<"Apakah Anda Kelas International atau Kelas Reguler. Ketik 1 Untuk Kelas International dan Ketik 2 Untuk Kelas Reguler"<<endl;
+		cout<<"Apakah Anda Memilih Kelas International. (Y/n)"<<endl;
 		cin>>kelas;
-		if(kelas == 1 ){
+		if(kelas == 'Y' || kelas == 'y' ){ // Ya untuk kelas inter
 			spp_tetap = 2550000;
 			spp_vbl = 180000;
 		}
-		else{
+		else{ // tidak, default reguler
 			spp_tetap = 2075000;
 			spp_vbl = 140000;
 		}
@@ -58,24 +58,26 @@ int main(){
 	fakul[1] = "Fakultas Ekonomi dan Sosial";
 	fakul[2] = "Fakultas Sains dan Teknologi";
 	
-	
 	// Code Input Nama dan Nim 
 	cout<<"Masukkan NIM Anda : ";
 	cin>>nim;
 	cout<<"Masukkan Nama Anda : ";
 	getline(cin >> ws, nama);
+	
 	cout<<"Silahkan Masukkan Fakultas Anda"<<endl;
 	cout<<"Ketik 1 untuk Fakultas Ilmu Komputer"<<endl;
 	cout<<"Ketik 2 untuk Fakultas Ekonomi dan Sosial"<<endl;
 	cout<<"Ketik 3 untuk Fakultas Sains dan Teknologi"<<endl;
 	cin>>fakultas;
-	cout<<Percabangan(fakultas);
+	Percabangan(fakultas);
 	
-	cout<<"Masukkan SKS : "<<endl;
+	cout<<"Masukkan SKS : ";
 	cin>>sks;
-	cout<<"Administrasi Mahasiswa Amikom"<<endl; 
+
+	cout<<"\nAdministrasi Mahasiswa Amikom"<<endl; 
 	cout<<user_fakul<<endl;
 	cout<<"Nama Mahasiswa : "<<nama<<endl;
+	cout << "NIM : " << nim;
 	cout<<Perhitungan(spp_tetap, spp_vbl, sks);
 	return 0;
 }
