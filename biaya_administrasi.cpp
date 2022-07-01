@@ -37,11 +37,13 @@ int main(){
 		}
 	}
 	else if(fakultas == 2){
+		user_fakul = fakul[1];
 		cout<<"Kamu adalah Anggota dari "<<user_fakul<<endl;
 		spp_tetap == 1475000;
 		spp_vbl == 140000;
 	}
 	else if(fakultas == 3){
+		user_fakul = fakul[2];
 		cout<<"Kamu adalah Anggota dari "<<user_fakul<<endl;
 		spp_tetap = 2075000;
 		spp_vbl = 140000*sks;
@@ -54,6 +56,8 @@ int main(){
 	cin>>sks;
 	totbay = spp_tetap + spp_vbl;
 	cout<<"Administrasi Mahasiswa Amikom"<<endl; 
+	cout<<user_fakul<<endl;
+	
 	cout<<"Nama Mahasiswa : "<<nama<<endl;
 	cout<<"NIM Mahasiswa : "<<nim<<endl;
 	cout<<"Jumlah SPP Tetap yang harus di bayarkan : Rp."<<spp_tetap<<endl;
