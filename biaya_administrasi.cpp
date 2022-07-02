@@ -25,8 +25,8 @@ void Percabangan(int fakul_kuliah){
 	else if(fakul_kuliah == 2){
 		user_fakul = fakul[1];
 		cout<<"Kamu adalah Anggota dari "<<user_fakul<<endl;
-		spp_tetap == 1475000;
-		spp_vbl == 140000;
+		spp_tetap = 1475000;
+		spp_vbl = 140000;
 	}
 	else if(fakul_kuliah == 3){
 		user_fakul = fakul[2];
@@ -35,7 +35,7 @@ void Percabangan(int fakul_kuliah){
 		spp_vbl = 140000;
 	}
 	else{
-		cout<<"Mohon Masukkan Input yang sudah disediakan di atas"<<endl;
+		throw range_error("Mohon Masukkan Input yang sudah disediakan di atas.\n");
 	}
 }
 
@@ -46,9 +46,11 @@ void Percabangan(int fakul_kuliah){
 int Perhitungan(int spp_ttp, int spp_variabel, int sks){
 	int spp_totVbl = spp_variabel * sks;
 	int tot_bay = spp_ttp + spp_totVbl;
-	cout<<"Total SPP Tetap : "<<spp_ttp<<endl;
-	cout<<"Total SPP Variabel : "<<spp_variabel<<endl;
-	cout<<"Total Yang Harus Dibayarkan: "<<tot_bay<<endl;
+	cout<<"Total SPP Tetap \t\t: "<<spp_ttp<<endl;
+	cout<<"\tSPP Variabel \t: "<<spp_variabel<<endl;
+	cout<<"\tsks \t\t: "<<sks<<endl;
+	cout<<"Total SPP Variabel \t\t: "<<spp_totVbl<<endl;
+	cout<<"Total Yang Harus Dibayarkan \t: "<<tot_bay<<endl;
 	return tot_bay;
 }
 
@@ -69,15 +71,22 @@ int main(){
 	cout<<"Ketik 2 untuk Fakultas Ekonomi dan Sosial"<<endl;
 	cout<<"Ketik 3 untuk Fakultas Sains dan Teknologi"<<endl;
 	cin>>fakultas;
-	Percabangan(fakultas);
-	
-	cout<<"Masukkan SKS : ";
-	cin>>sks;
+	try
+	{
+		Percabangan(fakultas);
+		cout<<"Masukkan SKS : ";
+		cin>>sks;
 
-	cout<<"\nAdministrasi Mahasiswa Amikom"<<endl; 
-	cout<<user_fakul<<endl;
-	cout<<"Nama Mahasiswa : "<<nama<<endl;
-	cout << "NIM : " << nim << endl;
-	cout<<Perhitungan(spp_tetap, spp_vbl, sks);
+		cout<<"\nAdministrasi Mahasiswa Amikom"<<endl; 
+		cout<<user_fakul<<endl;
+		cout<<"Nama Mahasiswa : "<<nama<<endl;
+		cout << "NIM : " << nim << endl;
+		Perhitungan(spp_tetap, spp_vbl, sks);
+	}
+	catch(const exception& e)
+	{
+		cerr << e.what() << '\n';
+	}
+
 	return 0;
 }
