@@ -1,5 +1,6 @@
 #include <iostream>
-#include <stdexcept>
+
+#include <stdexcept> 
 
 using namespace std;
 
@@ -8,7 +9,7 @@ int fakultas, prodi, spp_tetap, sks, spp_vbl, totbay;
 char pli;
 
 void Percabangan(int fakul_kuliah){
-	//Code If ELse
+	//Code untuk If ELse
 	char kelas;
 	if(fakul_kuliah == 1){
 		user_fakul = fakul[0];
@@ -20,7 +21,7 @@ void Percabangan(int fakul_kuliah){
 			spp_vbl = 180000;
 			kls = "International";
 		}
-		else{ // tidak, default reguler
+		else{ // untuk tidak, default reguler
 			spp_tetap = 2075000;
 			spp_vbl = 140000;
 			kls = "Reguler";
@@ -31,14 +32,14 @@ void Percabangan(int fakul_kuliah){
 		cout<<"\nKamu adalah Anggota dari "<<user_fakul<<endl;
 		spp_tetap = 1475000;
 		spp_vbl = 140000;
-		kls = "-";
+		kls = "Reguler";
 	}
 	else if(fakul_kuliah == 3){
 		user_fakul = fakul[2];
 		cout<<"\nKamu adalah Anggota dari "<<user_fakul<<endl;
 		spp_tetap = 2075000;
 		spp_vbl = 140000;
-		kls = "-";
+		kls = "Reguler";
 	}
 	else{
 		throw range_error(" Mohon Masukkan Input yang sudah disediakan di atas.\n");
@@ -48,7 +49,7 @@ void Percabangan(int fakul_kuliah){
 
 
 
-//Fungsi Menghitung Total Bayar
+//Fungsi untuk menghitung Total pembayaran
 int Perhitungan(int spp_ttp, int spp_variabel, int sks){
 	int spp_totVbl = spp_variabel * sks;
 	int tot_bay = spp_ttp + spp_totVbl;
@@ -68,7 +69,7 @@ int main(){
 	
 	do{
 	
-	// Code Input Nama dan Nim 
+	// Code untuk input Nama dan NIM 
 	cout<<"\n--------------Administrasi Mahasiswa Amikom--------------\n"<<endl; 
 	cout<<" Masukkan NIM Anda  : ";
 	cin>>nim;
@@ -101,15 +102,15 @@ int main(){
 	}
 	catch(const exception& e)
 	{
-		cerr << e.what() << '\n';
+		cerr << '\n' << e.what();
 	}
 	cout<<"\n\n---------------------------------------------------------"<<endl;
 	cout<<"\n Melakukan Lagi [Y/N] : ";
 	cin>>pli;
-	cout<<"\n---------------------------------------------------------\n\n"<<endl;
+	cout<<"\n-----------------------------------------------------------\n\n"<<endl;
 	
 	}
 	while (pli == 'Y' || pli == 'y');
-	cout<<"--------------------------Selesai--------------------------\n";
+	cout<<"---------------------------SELESAI---------------------------\n";
 	return 0;
 }
