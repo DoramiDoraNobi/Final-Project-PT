@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdexcept>
+#include <stdexcept> 
 
 using namespace std;
 
@@ -8,7 +8,7 @@ int fakultas, prodi, spp_tetap, sks, spp_vbl, totbay;
 char pli;
 
 void Percabangan(int fakul_kuliah){
-	//Code If ELse
+	//Code untuk If ELse
 	char kelas;
 	if(fakul_kuliah == 1){
 		user_fakul = fakul[0];
