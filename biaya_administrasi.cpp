@@ -68,7 +68,7 @@ int main(){
 	
 	do{
 	
-	// Code Input Nama dan Nim 
+	// Code Input Nama dan NIM 
 	cout<<"\n--------------Administrasi Mahasiswa Amikom--------------\n"<<endl; 
 	cout<<" Masukkan NIM Anda  : ";
 	cin>>nim;
